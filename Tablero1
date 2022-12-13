@@ -1,0 +1,45 @@
+package proyecto;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author steve
+ */
+public class Tableros {
+    private static FichasJugador fichas[] = new FichasJugador[2];
+    private static String nombreJugador;
+    private int tamaño;
+    private String[][] mapaJugador;
+    private String[][] mapaCPU;
+    private String[][] mapaAtaqueJugador;
+    private String[][] mapaAtaqueCPU;
+
+    public Tableross(int tamaño) {
+        this.tamaño = tamaño;
+        this.mapaJugador = new String[this.tamaño][this.tamaño];
+        this.mapaCPU = new String[this.tamaño][this.tamaño];
+        this.mapaAtaqueJugador = new String[this.tamaño][this.tamaño];
+        this.mapaAtaqueCPU = new String[this.tamaño][this.tamaño];
+    }
+
+    public static void nombreJugador() {
+        nombreJugador = JOptionPane.showInputDialog("Digite "
+                + "el nombre del jugador: ");
+    }
+
+    public static void iniciarFichas() {
+        // i = 0 (fichas del jugador) i = 1 (fichas CPU)
+        for (int i = 0; i < 2; i++) {
+            int almirante = 4;
+            int capitan01 = 3;
+            int capitan02 = 3;
+            int teniente01 = 1;
+            int teniente02 = 1;
+            int teniente03 = 1;
+            fichas[i] = new FichasJugador(almirante, capitan01, capitan02,
+                    teniente01, teniente02, teniente03);
+        }
+    }
+    
+}
